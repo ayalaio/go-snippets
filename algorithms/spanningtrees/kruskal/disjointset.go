@@ -1,14 +1,18 @@
 package kruskal
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/util"
+)
 
 type DisjointSet struct {
-	v      *Vertex
+	v      *util.Vertex
 	parent *DisjointSet
 	rank   int
 }
 
-func NewDisjointSet(v *Vertex, parent *DisjointSet) *DisjointSet {
+func NewDisjointSet(v *util.Vertex, parent *DisjointSet) *DisjointSet {
 	self := &DisjointSet{v, parent, 0}
 	if parent == nil {
 		self.parent = self
