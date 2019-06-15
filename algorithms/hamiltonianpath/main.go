@@ -1,11 +1,7 @@
 package main
 
 import (
-	"fmt"
-
-	hamilton "github.com/ayalaio/go-snippets/algorithms/spanningtrees/hamiltonianpath"
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/kruskal"
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/prim"
+	"github.com/ayalaio/go-snippets/algorithms/hamiltonianpath/hamilton"
 	"github.com/ayalaio/go-snippets/algorithms/util"
 )
 
@@ -44,23 +40,6 @@ func main() {
 	edgeList = append(edgeList, util.NewEdge(vB, vD, 3))
 	edgeList = append(edgeList, util.NewEdge(vC, vD, 1))
 	edgeList = append(edgeList, util.NewEdge(vC, vF, 2))
-
-	k := kruskal.NewKruskal(edgeList)
-
-	keptEdgeList := k.GetKeptEdges()
-
-	for _, e := range keptEdgeList {
-		fmt.Printf("%s - %s : %d \n", e.PointA.Name, e.PointB.Name, e.Weight)
-	}
-
-	println("------ prim --------")
-
-	p := prim.NewPrim(vD)
-	keptEdgeList = p.GetKeptEdges()
-
-	for _, e := range keptEdgeList {
-		fmt.Printf("%s - %s : %d \n", e.PointA.Name, e.PointB.Name, e.Weight)
-	}
 
 	println("-------- hamiltonian / not a spanning tree -------")
 

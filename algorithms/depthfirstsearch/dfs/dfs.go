@@ -54,21 +54,3 @@ func visit(v *vertex.Vertex) {
 	v.Visit()
 	fmt.Printf("Visited %d\n", v.Data)
 }
-
-type TopologicalOrder struct {
-	order stack.Stack
-}
-
-func NewTopologicalOrder() *TopologicalOrder {
-	t := TopologicalOrder{}
-	t.order = stack.New()
-	return &t
-}
-
-func (t *TopologicalOrder) GetOrder(l []*vertex.Vertex) {
-	for _, v := range l {
-		if !v.IsVisited {
-
-		}
-	}
-}

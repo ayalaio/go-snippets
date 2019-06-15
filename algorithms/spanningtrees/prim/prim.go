@@ -3,7 +3,7 @@ package prim
 import (
 	"container/heap"
 
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/util"
+	"github.com/ayalaio/go-snippets/algorithms/util"
 	"github.com/ayalaio/utils/queue"
 )
 

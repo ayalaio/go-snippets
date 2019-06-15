@@ -3,7 +3,7 @@ package kruskal
 import (
 	"fmt"
 
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/util"
+	"github.com/ayalaio/go-snippets/algorithms/util"
 )
 
 type DisjointSet struct {

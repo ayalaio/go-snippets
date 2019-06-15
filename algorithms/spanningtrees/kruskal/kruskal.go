@@ -3,7 +3,7 @@ package kruskal
 import (
 	"container/heap"
 
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/util"
+	"github.com/ayalaio/go-snippets/algorithms/util"
 )
 
 type Kruskal struct {
@@ -59,8 +59,8 @@ func (self *Kruskal) GetDisjointSet(v *util.Vertex) *DisjointSet {
 
 func (self *Kruskal) traverseEdges() {
 
-	for len(*self.edgeHeap) > 0 {
-		e := heap.Pop(self.edgeHeap).(*util.Edge)
+	for self.edgeHeap.Len() > 0 {
+		e := self.popEdge()
 		dA := self.GetDisjointSet(e.PointA)
 		dB := self.GetDisjointSet(e.PointB)
 
