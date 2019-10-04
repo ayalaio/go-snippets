@@ -45,11 +45,11 @@ func (self *EdgeHeap) Pop() interface{} {
 }
 
 type Dijkstra struct {
-	precedent     map[*Vertex]*Vertex
-	weight        map[*Vertex]int
-	registredEdge map[*Edge]bool
-	edgeHeap      *EdgeHeap
-	root          *Vertex
+	precedent map[*Vertex]*Vertex
+	weight    map[*Vertex]int
+	edgePool  map[*Edge]bool
+	edgeHeap  *EdgeHeap
+	root      *Vertex
 }
 
 func NewDijkstra(root *Vertex) *Dijkstra {
@@ -72,17 +72,17 @@ func (self Dijkstra) Solve() {
 		trg := edge.trg
 		src := edge.src
 
-		currRegWeight, isRegistered := self.weight[trg]
-		if !isRegistered || self.weight[src]+edge.weight < currRegWeight {
+		currRegWeight, hasWeight := self.weight[trg]
+		if !hasWeight || self.weight[src]+edge.weight < currRegWeight {
 			self.weight[trg] = self.weight[src] + edge.weight
 			self.precedent[trg] = src
 		}
 
 		for i := 0; i < len(trg.neighbors); i++ {
 			nE := trg.neighbors[i]
-			if _, isRegistered := self.registredEdge[nE]; !isRegistered {
+			if _, isRegistered := self.edgePool[nE]; !isRegistered {
 				heap.Push(self.edgeHeap, nE)
-				self.registredEdge[nE] = true
+				self.edgePool[nE] = true
 			}
 		}
 

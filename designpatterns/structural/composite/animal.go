@@ -15,7 +15,7 @@ type Eater interface {
 }
 
 type Human struct {
-	Animal
+	*Animal
 	Eater
 	Friend         Animal
 	CustomAnoyment func()
@@ -31,7 +31,7 @@ func (e EaterImplForHumans) Eat() {
 func main() {
 	var h Human
 	h = Human{
-		Animal: Animal{Name: "Pablo"},
+		Animal: &Animal{Name: "Pablo"},
 		Eater:  &EaterImplForHumans{}, // This is composite pattern
 		Friend: Animal{Name: "Firulais"},
 		CustomAnoyment: func(h *Human) func() {

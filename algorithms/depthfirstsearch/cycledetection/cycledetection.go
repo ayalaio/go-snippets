@@ -15,7 +15,7 @@ func FindCycle(v *vertex.Vertex) bool {
 		fmt.Printf("%d\n", v.Data)
 
 		isBeingVisited[v] = true
-		v.Visit()
+		v.Visit() // visit is different than being visited
 
 		neighborHasCycles := false
 

@@ -6,7 +6,7 @@ type Node struct {
 	Right  *Node
 }
 
-func prune(n *Node, currentSum, targetSum int) bool {
+func (n *Node) prune(currentSum, targetSum int) bool {
 
 	currentSum += n.Number
 
@@ -21,7 +21,7 @@ func prune(n *Node, currentSum, targetSum int) bool {
 	pruneLeft, pruneRight := false, false
 
 	if n.Left != nil {
-		pruneLeft = prune(n.Left, currentSum, targetSum)
+		pruneLeft = n.Left.prune(currentSum, targetSum)
 		if pruneLeft {
 			println("prune", n.Left.Number)
 			n.Left = nil
@@ -31,7 +31,7 @@ func prune(n *Node, currentSum, targetSum int) bool {
 	}
 
 	if n.Right != nil {
-		pruneRight = prune(n.Right, currentSum, targetSum)
+		pruneRight = n.Right.prune(currentSum, targetSum)
 		if pruneRight {
 			println("prune", n.Right.Number)
 			n.Right = nil
@@ -71,6 +71,6 @@ func main() {
 		},
 	}
 
-	prune(root, 0, 20)
+	root.prune(0, 20)
 
 }

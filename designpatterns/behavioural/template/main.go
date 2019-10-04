@@ -11,8 +11,6 @@ type Interface interface {
 	Swap(i, j int)
 }
 
-type Sortable struct{}
-
 /* Sort template */
 func Sort(a Interface) {
 	for i := 0; i < a.Len()-1; i++ {
@@ -29,7 +27,7 @@ type Narco struct {
 	Name string
 	Age  int
 }
-type NarcoList []Narco
+type NarcoList []*Narco
 
 /* Following 3 funcs fill the Sort template */
 
@@ -46,16 +44,18 @@ func (nl NarcoList) Swap(i, j int) {
 }
 
 func main() {
-	pepe := Narco{Age: 12}
-	lalo := Narco{Age: 34}
-	rafa := Narco{Age: 17}
+	pepe := &Narco{Age: 12}
+	lalo := &Narco{Age: 34}
+	rafa := &Narco{Age: 17}
 
-	narcos := NarcoList{}
+	narcos := make([]*Narco, 0)
 	narcos = append(narcos, pepe, lalo, rafa)
 
-	Sort(narcos)
+	narcoList := NarcoList(narcos)
 
-	for i := 0; i < narcos.Len(); i++ {
+	Sort(narcoList)
+
+	for i := 0; i < narcoList.Len(); i++ {
 		println(narcos[i].Age)
 	}
 

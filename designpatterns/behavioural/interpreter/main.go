@@ -13,18 +13,18 @@ const (
 )
 
 type Interpreter interface {
-	Read() int
+	Read() Value
 }
 
 type Value int
-type MathFunc func() int
+type MathFunc func() Value
 
-func (v *Value) Read() int {
+func (v *Value) Read() Value {
 	println("READING")
-	return int(*v)
+	return *v
 }
 
-func (f *MathFunc) Read() int {
+func (f *MathFunc) Read() Value {
 	println("READING")
 	return (*f)()
 }
@@ -32,28 +32,28 @@ func (f *MathFunc) Read() int {
 func MathFuncFactory(_i, _j Interpreter, o string) MathFunc {
 	switch o {
 	case ADD:
-		return MathFunc(func() int {
+		return MathFunc(func() Value {
 			i := _i.Read()
 			j := _j.Read()
-			return i + j
+			return Value(i + j)
 		})
 	case SUB:
-		return MathFunc(func() int {
+		return MathFunc(func() Value {
 			i := _i.Read()
 			j := _j.Read()
-			return i - j
+			return Value(i - j)
 		})
 	case MUL:
-		return MathFunc(func() int {
+		return MathFunc(func() Value {
 			i := _i.Read()
 			j := _j.Read()
-			return i * j
+			return Value(i * j)
 		})
 	case DIV:
-		return MathFunc(func() int {
+		return MathFunc(func() Value {
 			i := _i.Read()
 			j := _j.Read()
-			return i / j
+			return Value(i / j)
 		})
 	}
 	return nil
@@ -110,5 +110,5 @@ func main() {
 		}
 	}
 	println("DONE BUILDING")
-	println(stack.Pop().Read())
+	println(int(stack.Pop().Read()))
 }

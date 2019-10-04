@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 )
 
 type List struct {
@@ -10,17 +10,17 @@ type List struct {
 	tail *Node
 }
 
-func (l *List) First() *Node{
+func (l *List) First() *Node {
 	return l.head
 }
 
-func (l *List) Last() *Node{
+func (l *List) Last() *Node {
 	return l.tail
 }
 
-func (l *List) Push(value int){
-	node := &Node{value: value}
-	if l.head == nil{
+func (l *List) Push(value int) {
+	node := NewNode(value)
+	if l.head == nil {
 		l.head = node
 	} else {
 		l.tail.next = node
@@ -44,8 +44,8 @@ func (l *List) Find(value int) (*Node, error) {
 			break
 		}
 		n = n.Next()
-		
-	} 
+
+	}
 	return n, err
 }
 
@@ -79,11 +79,14 @@ func (l *List) String() string {
 	return l.StringForward()
 }
 
-
 type Node struct {
 	value int
-	next *Node
-	prev *Node
+	next  *Node
+	prev  *Node
+}
+
+func NewNode(v int) *Node {
+	return &Node{v, nil, nil}
 }
 
 func (n *Node) Next() *Node {
@@ -107,6 +110,6 @@ func main() {
 	if n, err := l.Find(7); err != nil {
 		fmt.Println(err)
 	} else {
-		fmt.Println("Node ", n , " was found")
+		fmt.Println("Node ", n, " was found")
 	}
 }
