@@ -7,6 +7,8 @@ type Product struct {
 	value, weight int
 }
 
+var mem [][]int
+
 func areProductsLeft(products []*Product, prodIdx, capacityLeft int) bool {
 	for i := prodIdx; i < len(products); i++ {
 		if products[i].weight <= capacityLeft {
@@ -18,16 +20,21 @@ func areProductsLeft(products []*Product, prodIdx, capacityLeft int) bool {
 
 func FillTheBag(capacity int, products []*Product, prodIdx, currVal, currWeight int) int {
 
-	if currWeight <= capacity && !areProductsLeft(products, prodIdx, capacity-currWeight) {
-		return currVal
-	}
-
 	if currWeight > capacity {
 		return 0
 	}
 
 	if prodIdx >= len(products) {
 		return 0
+	}
+
+	if v := mem[prodIdx][currWeight]; v > 0 {
+		return v
+	}
+
+	if currWeight <= capacity && !areProductsLeft(products, prodIdx, capacity-currWeight) {
+		mem[prodIdx][currWeight] = currVal
+		return currVal
 	}
 
 	// We include product
@@ -38,7 +45,10 @@ func FillTheBag(capacity int, products []*Product, prodIdx, currVal, currWeight 
 	with := FillTheBag(capacity, products, prodIdx+1,
 		currVal, currWeight)
 
-	return maxInt(withOut, with)
+	max := maxInt(withOut, with)
+	mem[prodIdx][currWeight] = max
+	return max
+
 }
 
 func maxInt(a, b int) int {
@@ -49,6 +59,9 @@ func maxInt(a, b int) int {
 }
 
 func main() {
+
+	totalCapacity := 165
+
 	products := []*Product{
 		&Product{"A", 92, 23},
 		&Product{"B", 57, 31},
@@ -62,7 +75,10 @@ func main() {
 		&Product{"J", 72, 82},
 	}
 
-	totalCapacity := 165
+	mem = make([][]int, len(products))
+	for i := range mem {
+		mem[i] = make([]int, totalCapacity+1)
+	}
 
 	maxValue := FillTheBag(totalCapacity, products, 0, 0, 0)
 
