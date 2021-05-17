@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/daroay/algorithms/2021/utils/node"
-	"github.com/daroay/algorithms/2021/utils/stack"
+	"github.com/daroay/go-snippets/algorithms/2021/utils"
 )
 
-func BreathfirstSearch(node *Node) {
+func BreathfirstSearch(node *utils.Node) {
 	if node == nil {
 		return
 	}
@@ -16,13 +15,13 @@ func BreathfirstSearch(node *Node) {
 
 func main() {
 	fmt.Println("Breathfirst search")
-	root := node.NewNode(0)
-	one := node.NewNode(1)
-	two := node.NewNode(2)
-	three := node.NewNode(3)
-	four := node.NewNode(4)
-	five := node.NewNode(5)
-	six := node.NewNode(6)
+	root := utils.NewNode(0)
+	one := utils.NewNode(1)
+	two := utils.NewNode(2)
+	three := utils.NewNode(3)
+	four := utils.NewNode(4)
+	five := utils.NewNode(5)
+	six := utils.NewNode(6)
 	root.AddChildren(one)
 	root.AddChildren(two)
 	one.AddChildren(three)
@@ -31,7 +30,7 @@ func main() {
 	two.AddChildren(six)
 	BreathfirstSearch(root)
 
-	s := stack.Stack{}
+	s := utils.Stack{}
 	s.Push(1)
 	s.Push(2)
 
