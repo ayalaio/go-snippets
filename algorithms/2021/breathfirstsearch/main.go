@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	node "github.com/daroay/2021/utils/Node.go"
-	stack "github.com/daroay/2021/utils/Stack.go"
+	"github.com/daroay/2021/utils/node"
+	"github.com/daroay/2021/utils/stack"
 )
 
 func BreathfirstSearch(node *Node) {
