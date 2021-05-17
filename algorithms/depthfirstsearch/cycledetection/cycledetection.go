@@ -3,7 +3,7 @@ package cycledetection
 import (
 	"fmt"
 
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/utils/vertex"
 )
 
 // FindCycle finds a cycle in a Graph

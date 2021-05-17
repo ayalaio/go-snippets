@@ -3,9 +3,9 @@ package main
 import (
 	"container/list"
 
-	"github.com/ayalaio/go-snippets/algorithms/breathfirstsearch/bfs"
-	"github.com/ayalaio/go-snippets/algorithms/breathfirstsearch/dijkstra"
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/go-snippets/algorithms/breathfirstsearch/bfs"
+	"github.com/daroay/go-snippets/algorithms/breathfirstsearch/dijkstra"
+	"github.com/daroay/utils/vertex"
 )
 
 func main() {

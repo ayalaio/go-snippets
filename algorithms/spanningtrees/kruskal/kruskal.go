@@ -3,7 +3,7 @@ package kruskal
 import (
 	"container/heap"
 
-	"github.com/ayalaio/go-snippets/algorithms/util"
+	"github.com/daroay/go-snippets/algorithms/util"
 )
 
 type Kruskal struct {

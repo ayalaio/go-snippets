@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	hamilton "github.com/ayalaio/go-snippets/algorithms/spanningtrees/hamiltonianpath"
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/kruskal"
-	"github.com/ayalaio/go-snippets/algorithms/spanningtrees/prim"
-	"github.com/ayalaio/go-snippets/algorithms/util"
+	hamilton "github.com/daroay/go-snippets/algorithms/spanningtrees/hamiltonianpath"
+	"github.com/daroay/go-snippets/algorithms/spanningtrees/kruskal"
+	"github.com/daroay/go-snippets/algorithms/spanningtrees/prim"
+	"github.com/daroay/go-snippets/algorithms/util"
 )
 
 func main() {

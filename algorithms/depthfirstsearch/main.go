@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/ayalaio/go-snippets/algorithms/depthfirstsearch/cycledetection"
-	"github.com/ayalaio/go-snippets/algorithms/depthfirstsearch/dfs"
-	"github.com/ayalaio/go-snippets/algorithms/depthfirstsearch/solvemaze"
-	"github.com/ayalaio/go-snippets/algorithms/depthfirstsearch/topologicalorder"
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/go-snippets/algorithms/depthfirstsearch/cycledetection"
+	"github.com/daroay/go-snippets/algorithms/depthfirstsearch/dfs"
+	"github.com/daroay/go-snippets/algorithms/depthfirstsearch/solvemaze"
+	"github.com/daroay/go-snippets/algorithms/depthfirstsearch/topologicalorder"
+	"github.com/daroay/utils/vertex"
 )
 
 func main() {

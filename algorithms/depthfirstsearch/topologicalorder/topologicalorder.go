@@ -1,8 +1,8 @@
 package topologicalorder
 
 import (
-	"github.com/ayalaio/utils/stack"
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/utils/stack"
+	"github.com/daroay/utils/vertex"
 )
 
 type TopologicalOrder struct {

@@ -3,8 +3,8 @@ package bfs
 import (
 	"fmt"
 
-	"github.com/ayalaio/utils/queue"
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/utils/queue"
+	"github.com/daroay/utils/vertex"
 )
 
 // BFS Visits nodes

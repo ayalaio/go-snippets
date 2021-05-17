@@ -3,8 +3,8 @@ package prim
 import (
 	"container/heap"
 
-	"github.com/ayalaio/go-snippets/algorithms/util"
-	"github.com/ayalaio/utils/queue"
+	"github.com/daroay/go-snippets/algorithms/util"
+	"github.com/daroay/utils/queue"
 )
 
 type Prim struct {

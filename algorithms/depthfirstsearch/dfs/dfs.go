@@ -3,8 +3,8 @@ package dfs
 import (
 	"fmt"
 
-	"github.com/ayalaio/utils/stack"
-	"github.com/ayalaio/utils/vertex"
+	"github.com/daroay/utils/stack"
+	"github.com/daroay/utils/vertex"
 )
 
 func DFS(l []*vertex.Vertex) {

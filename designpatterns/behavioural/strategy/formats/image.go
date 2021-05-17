@@ -9,7 +9,7 @@ import (
 	"image/jpeg"
 	"io"
 
-	"github.com/ayalaio/behavioural/strategy"
+	"github.com/daroay/behavioural/strategy"
 )
 
 type ImageSquare struct {

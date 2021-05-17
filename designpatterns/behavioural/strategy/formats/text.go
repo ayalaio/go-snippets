@@ -3,7 +3,7 @@ package formats
 import (
 	"fmt"
 
-	"github.com/ayalaio/behavioural/strategy"
+	"github.com/daroay/behavioural/strategy"
 )
 
 type TextSquare struct {

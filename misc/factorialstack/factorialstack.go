@@ -1,6 +1,6 @@
 package main
 
-import "github.com/ayalaio/utils/stack"
+import "github.com/daroay/utils/stack"
 
 type MathFact struct {
 	Content int

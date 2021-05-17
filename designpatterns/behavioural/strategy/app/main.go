@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/ayalaio/behavioural/strategy/formats"
+	"github.com/daroay/behavioural/strategy/formats"
 )
 
 var output = flag.String("output", "text", "...")

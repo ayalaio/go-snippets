@@ -3,7 +3,7 @@ package hamilton
 import (
 	"fmt"
 
-	"github.com/ayalaio/go-snippets/algorithms/util"
+	"github.com/daroay/go-snippets/algorithms/util"
 )
 
 type HamiltonianPath struct {

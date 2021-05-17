@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/ayalaio/go-snippets/algorithms/hamiltonianpath/hamilton"
-	"github.com/ayalaio/go-snippets/algorithms/util"
+	"github.com/daroay/go-snippets/algorithms/hamiltonianpath/hamilton"
+	"github.com/daroay/go-snippets/algorithms/util"
 )
 
 func main() {
