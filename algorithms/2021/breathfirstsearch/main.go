@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/daroay/2021/utils/node"
-	"github.com/daroay/2021/utils/stack"
+	"github.com/daroay/algorithms/2021/utils/node"
+	"github.com/daroay/algorithms/2021/utils/stack"
 )
 
 func BreathfirstSearch(node *Node) {
