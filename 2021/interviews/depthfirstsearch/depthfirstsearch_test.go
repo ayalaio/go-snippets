@@ -6,7 +6,7 @@ import (
 	"github.com/daroay/go-snippets/2021/utils"
 )
 
-func AddChildrenToStack(children []*utils.Node, s *utils.Stack) {
+func addChildrenToStack(children []*utils.Node, s *utils.Stack) {
 	for i := len(children) - 1; i >= 0; i-- {
 		s.Push(children[i])
 	}
@@ -18,7 +18,7 @@ func DepthFirstSearch(node *utils.Node, block func(*utils.Node)) {
 	for item := s.Pop(); item != nil; item = s.Pop() {
 		n := item.(*utils.Node)
 		block(n)
-		AddChildrenToStack(n.Children, &s)
+		addChildrenToStack(n.Children, &s)
 	}
 }
 
@@ -40,8 +40,8 @@ func TestDepthFirstSearch(t *testing.T) {
 	expectedOrderIter := 0
 	DepthFirstSearch(root, func(n *utils.Node) {
 		expectedNumber := expectedOrder[expectedOrderIter]
-		if n.Number != expectedNumber {
-			t.Errorf("Expected %d, got %d", expectedNumber, n.Number)
+		if n.Content != expectedNumber {
+			t.Errorf("Expected %d, got %d", expectedNumber, n.Content)
 		}
 		expectedOrderIter++
 	})

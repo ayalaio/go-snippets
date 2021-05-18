@@ -2,6 +2,10 @@ package utils
 
 type Stack []interface{}
 
+func NewStack() *Stack {
+	return &Stack{}
+}
+
 func (self *Stack) Push(object interface{}) {
 	*self = append(*self, object)
 }

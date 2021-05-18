@@ -41,8 +41,8 @@ func TestBreathFirstSearch(t *testing.T) {
 	two.AddChildren(six)
 	currentNumber := 0
 	BreathFirstSearch(root, func(n *utils.Node) {
-		if n.Number != currentNumber {
-			t.Errorf("Expecting %d, got %d", currentNumber, n.Number)
+		if n.Content != currentNumber {
+			t.Errorf("Expecting %d, got %d", currentNumber, n.Content)
 		}
 		currentNumber++
 	})

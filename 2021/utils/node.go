@@ -1,12 +1,12 @@
 package utils
 
 type Node struct {
-	Number   int
+	Content  interface{}
 	Children []*Node
 }
 
-func NewNode(num int) *Node {
-	return &Node{Number: num, Children: make([]*Node, 0)}
+func NewNode(content interface{}) *Node {
+	return &Node{Content: content, Children: make([]*Node, 0)}
 }
 
 func (self *Node) AddChildren(child *Node) {
