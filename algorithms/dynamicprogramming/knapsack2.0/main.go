@@ -28,6 +28,7 @@ func FillTheBag(capacity int, products []*Product, prodIdx, currVal, currWeight 
 		return 0
 	}
 
+	// What if currVal is bigger than what is stored? This is missing here
 	if v := mem[prodIdx][currWeight]; v > 0 {
 		return v
 	}
